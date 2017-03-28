@@ -1,0 +1,718 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		584B7E221E89AF2D007919FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B7E211E89AF2D007919FA /* AppDelegate.swift */; };
+		584B7E241E89AF2D007919FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B7E231E89AF2D007919FA /* ViewController.swift */; };
+		584B7E271E89AF2D007919FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 584B7E251E89AF2D007919FA /* Main.storyboard */; };
+		584B7E291E89AF2D007919FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 584B7E281E89AF2D007919FA /* Assets.xcassets */; };
+		584B7E2C1E89AF2D007919FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 584B7E2A1E89AF2D007919FA /* LaunchScreen.storyboard */; };
+		584B7E341E89F4EF007919FA /* MealDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B7E331E89F4EF007919FA /* MealDataModel.swift */; };
+		584B7E3C1E89F6E2007919FA /* RumbleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B7E3B1E89F6E2007919FA /* RumbleTests.swift */; };
+		584B7E461E89FA70007919FA /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B7E451E89FA70007919FA /* MealTableViewCell.swift */; };
+		584B7E481E8A02C5007919FA /* MealTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B7E471E8A02C5007919FA /* MealTableViewController.swift */; };
+		584B7E4F1E8A30CC007919FA /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 584B7E4D1E8A30CC007919FA /* Interface.storyboard */; };
+		584B7E511E8A30CC007919FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 584B7E501E8A30CC007919FA /* Assets.xcassets */; };
+		584B7E581E8A30CC007919FA /* RumbleWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 584B7E571E8A30CC007919FA /* RumbleWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		584B7E5F1E8A30CC007919FA /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B7E5E1E8A30CC007919FA /* InterfaceController.swift */; };
+		584B7E611E8A30CC007919FA /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B7E601E8A30CC007919FA /* ExtensionDelegate.swift */; };
+		584B7E631E8A30CC007919FA /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B7E621E8A30CC007919FA /* NotificationController.swift */; };
+		584B7E651E8A30CC007919FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 584B7E641E8A30CC007919FA /* Assets.xcassets */; };
+		584B7E691E8A30CC007919FA /* RumbleWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 584B7E4B1E8A30CC007919FA /* RumbleWatch.app */; };
+		584B7E731E8A34EE007919FA /* watchConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B7E721E8A34EE007919FA /* watchConnect.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		584B7E3E1E89F6E2007919FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 584B7E161E89AF2C007919FA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 584B7E1D1E89AF2C007919FA;
+			remoteInfo = Rumble;
+		};
+		584B7E591E8A30CC007919FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 584B7E161E89AF2C007919FA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 584B7E561E8A30CC007919FA;
+			remoteInfo = "RumbleWatch Extension";
+		};
+		584B7E671E8A30CC007919FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 584B7E161E89AF2C007919FA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 584B7E4A1E8A30CC007919FA;
+			remoteInfo = RumbleWatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		584B7E6D1E8A30CC007919FA /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				584B7E581E8A30CC007919FA /* RumbleWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		584B7E711E8A30CC007919FA /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				584B7E691E8A30CC007919FA /* RumbleWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		584B7E1E1E89AF2D007919FA /* Rumble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rumble.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		584B7E211E89AF2D007919FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		584B7E231E89AF2D007919FA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		584B7E261E89AF2D007919FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		584B7E281E89AF2D007919FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		584B7E2B1E89AF2D007919FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		584B7E2D1E89AF2D007919FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		584B7E331E89F4EF007919FA /* MealDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealDataModel.swift; sourceTree = "<group>"; };
+		584B7E391E89F6E2007919FA /* RumbleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RumbleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		584B7E3B1E89F6E2007919FA /* RumbleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RumbleTests.swift; sourceTree = "<group>"; };
+		584B7E3D1E89F6E2007919FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		584B7E451E89FA70007919FA /* MealTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MealTableViewCell.swift; path = ../MealTableViewCell.swift; sourceTree = "<group>"; };
+		584B7E471E8A02C5007919FA /* MealTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTableViewController.swift; sourceTree = "<group>"; };
+		584B7E4B1E8A30CC007919FA /* RumbleWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RumbleWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		584B7E4E1E8A30CC007919FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		584B7E501E8A30CC007919FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		584B7E521E8A30CC007919FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		584B7E571E8A30CC007919FA /* RumbleWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "RumbleWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		584B7E5D1E8A30CC007919FA /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		584B7E5E1E8A30CC007919FA /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		584B7E601E8A30CC007919FA /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		584B7E621E8A30CC007919FA /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		584B7E641E8A30CC007919FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		584B7E661E8A30CC007919FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		584B7E721E8A34EE007919FA /* watchConnect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = watchConnect.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		584B7E1B1E89AF2C007919FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		584B7E361E89F6E2007919FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		584B7E541E8A30CC007919FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		584B7E151E89AF2C007919FA = {
+			isa = PBXGroup;
+			children = (
+				584B7E201E89AF2D007919FA /* Rumble */,
+				584B7E3A1E89F6E2007919FA /* RumbleTests */,
+				584B7E4C1E8A30CC007919FA /* RumbleWatch */,
+				584B7E5B1E8A30CC007919FA /* RumbleWatch Extension */,
+				584B7E1F1E89AF2D007919FA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		584B7E1F1E89AF2D007919FA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				584B7E1E1E89AF2D007919FA /* Rumble.app */,
+				584B7E391E89F6E2007919FA /* RumbleTests.xctest */,
+				584B7E4B1E8A30CC007919FA /* RumbleWatch.app */,
+				584B7E571E8A30CC007919FA /* RumbleWatch Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		584B7E201E89AF2D007919FA /* Rumble */ = {
+			isa = PBXGroup;
+			children = (
+				584B7E251E89AF2D007919FA /* Main.storyboard */,
+				584B7E211E89AF2D007919FA /* AppDelegate.swift */,
+				584B7E231E89AF2D007919FA /* ViewController.swift */,
+				584B7E471E8A02C5007919FA /* MealTableViewController.swift */,
+				584B7E721E8A34EE007919FA /* watchConnect.swift */,
+				584B7E451E89FA70007919FA /* MealTableViewCell.swift */,
+				584B7E331E89F4EF007919FA /* MealDataModel.swift */,
+				584B7E281E89AF2D007919FA /* Assets.xcassets */,
+				584B7E2A1E89AF2D007919FA /* LaunchScreen.storyboard */,
+				584B7E2D1E89AF2D007919FA /* Info.plist */,
+			);
+			path = Rumble;
+			sourceTree = "<group>";
+		};
+		584B7E3A1E89F6E2007919FA /* RumbleTests */ = {
+			isa = PBXGroup;
+			children = (
+				584B7E3B1E89F6E2007919FA /* RumbleTests.swift */,
+				584B7E3D1E89F6E2007919FA /* Info.plist */,
+			);
+			path = RumbleTests;
+			sourceTree = "<group>";
+		};
+		584B7E4C1E8A30CC007919FA /* RumbleWatch */ = {
+			isa = PBXGroup;
+			children = (
+				584B7E4D1E8A30CC007919FA /* Interface.storyboard */,
+				584B7E501E8A30CC007919FA /* Assets.xcassets */,
+				584B7E521E8A30CC007919FA /* Info.plist */,
+			);
+			path = RumbleWatch;
+			sourceTree = "<group>";
+		};
+		584B7E5B1E8A30CC007919FA /* RumbleWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				584B7E5E1E8A30CC007919FA /* InterfaceController.swift */,
+				584B7E601E8A30CC007919FA /* ExtensionDelegate.swift */,
+				584B7E621E8A30CC007919FA /* NotificationController.swift */,
+				584B7E641E8A30CC007919FA /* Assets.xcassets */,
+				584B7E661E8A30CC007919FA /* Info.plist */,
+				584B7E5C1E8A30CC007919FA /* Supporting Files */,
+			);
+			path = "RumbleWatch Extension";
+			sourceTree = "<group>";
+		};
+		584B7E5C1E8A30CC007919FA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				584B7E5D1E8A30CC007919FA /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		584B7E1D1E89AF2C007919FA /* Rumble */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 584B7E301E89AF2D007919FA /* Build configuration list for PBXNativeTarget "Rumble" */;
+			buildPhases = (
+				584B7E1A1E89AF2C007919FA /* Sources */,
+				584B7E1B1E89AF2C007919FA /* Frameworks */,
+				584B7E1C1E89AF2C007919FA /* Resources */,
+				584B7E711E8A30CC007919FA /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				584B7E681E8A30CC007919FA /* PBXTargetDependency */,
+			);
+			name = Rumble;
+			productName = Rumble;
+			productReference = 584B7E1E1E89AF2D007919FA /* Rumble.app */;
+			productType = "com.apple.product-type.application";
+		};
+		584B7E381E89F6E2007919FA /* RumbleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 584B7E401E89F6E2007919FA /* Build configuration list for PBXNativeTarget "RumbleTests" */;
+			buildPhases = (
+				584B7E351E89F6E2007919FA /* Sources */,
+				584B7E361E89F6E2007919FA /* Frameworks */,
+				584B7E371E89F6E2007919FA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				584B7E3F1E89F6E2007919FA /* PBXTargetDependency */,
+			);
+			name = RumbleTests;
+			productName = RumbleTests;
+			productReference = 584B7E391E89F6E2007919FA /* RumbleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		584B7E4A1E8A30CC007919FA /* RumbleWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 584B7E6E1E8A30CC007919FA /* Build configuration list for PBXNativeTarget "RumbleWatch" */;
+			buildPhases = (
+				584B7E491E8A30CC007919FA /* Resources */,
+				584B7E6D1E8A30CC007919FA /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				584B7E5A1E8A30CC007919FA /* PBXTargetDependency */,
+			);
+			name = RumbleWatch;
+			productName = RumbleWatch;
+			productReference = 584B7E4B1E8A30CC007919FA /* RumbleWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		584B7E561E8A30CC007919FA /* RumbleWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 584B7E6A1E8A30CC007919FA /* Build configuration list for PBXNativeTarget "RumbleWatch Extension" */;
+			buildPhases = (
+				584B7E531E8A30CC007919FA /* Sources */,
+				584B7E541E8A30CC007919FA /* Frameworks */,
+				584B7E551E8A30CC007919FA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RumbleWatch Extension";
+			productName = "RumbleWatch Extension";
+			productReference = 584B7E571E8A30CC007919FA /* RumbleWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		584B7E161E89AF2C007919FA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Yanbo Li";
+				TargetAttributes = {
+					584B7E1D1E89AF2C007919FA = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 8396G73H5N;
+						ProvisioningStyle = Automatic;
+					};
+					584B7E381E89F6E2007919FA = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 8396G73H5N;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 584B7E1D1E89AF2C007919FA;
+					};
+					584B7E4A1E8A30CC007919FA = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 8396G73H5N;
+						ProvisioningStyle = Automatic;
+					};
+					584B7E561E8A30CC007919FA = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 8396G73H5N;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 584B7E191E89AF2C007919FA /* Build configuration list for PBXProject "Rumble" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 584B7E151E89AF2C007919FA;
+			productRefGroup = 584B7E1F1E89AF2D007919FA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				584B7E1D1E89AF2C007919FA /* Rumble */,
+				584B7E381E89F6E2007919FA /* RumbleTests */,
+				584B7E4A1E8A30CC007919FA /* RumbleWatch */,
+				584B7E561E8A30CC007919FA /* RumbleWatch Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		584B7E1C1E89AF2C007919FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				584B7E2C1E89AF2D007919FA /* LaunchScreen.storyboard in Resources */,
+				584B7E291E89AF2D007919FA /* Assets.xcassets in Resources */,
+				584B7E271E89AF2D007919FA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		584B7E371E89F6E2007919FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		584B7E491E8A30CC007919FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				584B7E511E8A30CC007919FA /* Assets.xcassets in Resources */,
+				584B7E4F1E8A30CC007919FA /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		584B7E551E8A30CC007919FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				584B7E651E8A30CC007919FA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		584B7E1A1E89AF2C007919FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				584B7E481E8A02C5007919FA /* MealTableViewController.swift in Sources */,
+				584B7E461E89FA70007919FA /* MealTableViewCell.swift in Sources */,
+				584B7E731E8A34EE007919FA /* watchConnect.swift in Sources */,
+				584B7E341E89F4EF007919FA /* MealDataModel.swift in Sources */,
+				584B7E241E89AF2D007919FA /* ViewController.swift in Sources */,
+				584B7E221E89AF2D007919FA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		584B7E351E89F6E2007919FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				584B7E3C1E89F6E2007919FA /* RumbleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		584B7E531E8A30CC007919FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				584B7E631E8A30CC007919FA /* NotificationController.swift in Sources */,
+				584B7E611E8A30CC007919FA /* ExtensionDelegate.swift in Sources */,
+				584B7E5F1E8A30CC007919FA /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		584B7E3F1E89F6E2007919FA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 584B7E1D1E89AF2C007919FA /* Rumble */;
+			targetProxy = 584B7E3E1E89F6E2007919FA /* PBXContainerItemProxy */;
+		};
+		584B7E5A1E8A30CC007919FA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 584B7E561E8A30CC007919FA /* RumbleWatch Extension */;
+			targetProxy = 584B7E591E8A30CC007919FA /* PBXContainerItemProxy */;
+		};
+		584B7E681E8A30CC007919FA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 584B7E4A1E8A30CC007919FA /* RumbleWatch */;
+			targetProxy = 584B7E671E8A30CC007919FA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		584B7E251E89AF2D007919FA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				584B7E261E89AF2D007919FA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		584B7E2A1E89AF2D007919FA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				584B7E2B1E89AF2D007919FA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		584B7E4D1E8A30CC007919FA /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				584B7E4E1E8A30CC007919FA /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		584B7E2E1E89AF2D007919FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		584B7E2F1E89AF2D007919FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		584B7E311E89AF2D007919FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8396G73H5N;
+				INFOPLIST_FILE = Rumble/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sunny.Rumble;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		584B7E321E89AF2D007919FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8396G73H5N;
+				INFOPLIST_FILE = Rumble/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sunny.Rumble;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		584B7E411E89F6E2007919FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 8396G73H5N;
+				INFOPLIST_FILE = RumbleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sunny.RumbleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rumble.app/Rumble";
+			};
+			name = Debug;
+		};
+		584B7E421E89F6E2007919FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 8396G73H5N;
+				INFOPLIST_FILE = RumbleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sunny.RumbleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rumble.app/Rumble";
+			};
+			name = Release;
+		};
+		584B7E6B1E8A30CC007919FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				DEVELOPMENT_TEAM = 8396G73H5N;
+				INFOPLIST_FILE = "RumbleWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sunny.Rumble.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Debug;
+		};
+		584B7E6C1E8A30CC007919FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				DEVELOPMENT_TEAM = 8396G73H5N;
+				INFOPLIST_FILE = "RumbleWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sunny.Rumble.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Release;
+		};
+		584B7E6F1E8A30CC007919FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8396G73H5N;
+				IBSC_MODULE = RumbleWatch_Extension;
+				INFOPLIST_FILE = RumbleWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = sunny.Rumble.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Debug;
+		};
+		584B7E701E8A30CC007919FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8396G73H5N;
+				IBSC_MODULE = RumbleWatch_Extension;
+				INFOPLIST_FILE = RumbleWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = sunny.Rumble.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		584B7E191E89AF2C007919FA /* Build configuration list for PBXProject "Rumble" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				584B7E2E1E89AF2D007919FA /* Debug */,
+				584B7E2F1E89AF2D007919FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		584B7E301E89AF2D007919FA /* Build configuration list for PBXNativeTarget "Rumble" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				584B7E311E89AF2D007919FA /* Debug */,
+				584B7E321E89AF2D007919FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		584B7E401E89F6E2007919FA /* Build configuration list for PBXNativeTarget "RumbleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				584B7E411E89F6E2007919FA /* Debug */,
+				584B7E421E89F6E2007919FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		584B7E6A1E8A30CC007919FA /* Build configuration list for PBXNativeTarget "RumbleWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				584B7E6B1E8A30CC007919FA /* Debug */,
+				584B7E6C1E8A30CC007919FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		584B7E6E1E8A30CC007919FA /* Build configuration list for PBXNativeTarget "RumbleWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				584B7E6F1E8A30CC007919FA /* Debug */,
+				584B7E701E8A30CC007919FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 584B7E161E89AF2C007919FA /* Project object */;
+}
