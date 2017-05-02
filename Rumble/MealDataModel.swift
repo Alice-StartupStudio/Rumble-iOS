@@ -9,6 +9,12 @@
 import UIKit
 import os.log
 
+var cellColors: [String:String] = ["Salad":"c6e4ec",
+                                   "Snack":"fce4b6",
+                                   "Apple":"fce4b6",
+                                   "Water":"f6bebb",
+                                   "Migraine":"D3D3D3"]
+
 class Meal: NSObject, NSCoding {
     
     // MARK: Properties

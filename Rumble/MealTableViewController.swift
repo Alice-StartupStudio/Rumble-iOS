@@ -21,10 +21,13 @@ class MealTableViewController: UITableViewController, WCSessionDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.backgroundColor = UIColor.lightGray
         
 //        UINavigationBar.appearance().tintColor = uicolorFromHex(0x76AB39)
         // Use the edit button item provided by the table view controller.
         navigationItem.leftBarButtonItem = editButtonItem
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
         
         if (WCSession.isSupported()) {
             session = WCSession.default()
@@ -42,7 +45,7 @@ class MealTableViewController: UITableViewController, WCSessionDelegate {
             // Load the sample data
             loadSampleMeals()
         }
-        
+        printMessagesForUser()
 
 
         // Uncomment the following line to preserve selection between presentations
@@ -51,12 +54,17 @@ class MealTableViewController: UITableViewController, WCSessionDelegate {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tableView.reloadData()
+    }
 
     // Watch Connection Session
     /** Called when the session has completed activation. If session state is WCSessionActivationStateNotActivated there will be an error with more details. */
     @available(iOS 9.3, *)
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        NSLog("%@", "activationDidCompleteWith activationState:\(activationState) error:\(error)")
+        NSLog("%@", "activationDidCompleteWith activationState:\(activationState) error:\(String(describing: error))")
     }
     
     func sessionDidBecomeInactive(_ session: WCSession) {
@@ -80,12 +88,8 @@ class MealTableViewController: UITableViewController, WCSessionDelegate {
 //                self.counterData.append(counterValue)
 //                self.mainTableView.reloadData()
                 if(msg == "AddMeal") {
-                    name = "Meal"
-                    photo = UIImage(named: "lunch")
-                }else if(msg == "AddWater"){
-                    name = "Water"
-                    photo = UIImage(named: "water")
-                }
+                    name = "Snack"
+                    photo = UIImage(named: "apple")
                     let date = Date()
                     let calendar = Calendar.current
                     let hour = calendar.component(.hour, from: date)
@@ -95,16 +99,104 @@ class MealTableViewController: UITableViewController, WCSessionDelegate {
                     
                     let meal = Meal(name: name, photo: photo, startTime: startTime, endTime: endTime)
                     meals.append(meal!)
-                    self.tableView.reloadData()
+                    DispatchQueue.main.async{
+                        self.tableView.reloadData()
+                    }
                     for m in meals {
                         print(m)
                     }
+                }else if(msg == "AddWater"){
+                    name = "Water"
+                    photo = UIImage(named: "water")
+                    self.printMessagesForUser()
+                }else{
+                    let date = Date()
+                    let calendar = Calendar.current
+                    let hour = calendar.component(.hour, from: date)
+                    let minutes = calendar.component(.minute, from: date)
+                    let startTime = String(hour) + ":" + String(minutes)
+                    let endTime = startTime
+                    
+                    let meal = Meal(name: name, photo: photo, startTime: startTime, endTime: endTime)
+                    meals.append(meal!)
+                    DispatchQueue.main.async{
+                        self.tableView.reloadData()
+                    }
+                    for m in meals {
+                        print(m)
+                    }
+                }
                 
             }
         }
 
     }
     
+    // Backend Call
+    func printMessagesForUser() -> Void {
+//        let json = ["user":"sunny"]
+//        do {
+//            let jsonData = try JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
+            
+//            let url = NSURL(string: "http://192.168.53.99:5000/api/get_messages")!
+            let url = NSURL(string: "http://d03f4289.ngrok.io/api/get_messages")!
+            let request = NSMutableURLRequest(url: url as URL)
+//            request.httpMethod = "POST"
+            request.httpMethod = "GET"
+            
+            request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+//            request.httpBody = jsonData
+            
+            let task = URLSession.shared.dataTask(with: request as URLRequest){ data, response, error in
+                if error != nil{
+                    print("Error -> \(String(describing: error))")
+                }
+                else {
+                    
+                do {
+                    let result = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String:AnyObject]
+                    print("Result -> \(String(describing: result?["class"]))")
+                    if (String(describing: result?["class"]) == "eating"){
+                        let date = Date()
+                        let calendar = Calendar.current
+                        let hour = calendar.component(.hour, from: date)
+                        let minutes = calendar.component(.minute, from: date)
+                        let startTime = String(hour) + ":" + String(minutes)
+                        let endTime = startTime
+                        
+                        let meal = Meal(name:"Snack", photo: UIImage(named: "apple"), startTime: startTime, endTime: endTime)
+                        meals.append(meal!)
+                        print("Eating item added to meals")
+                        DispatchQueue.main.async{
+                            self.tableView.reloadData()
+                        }
+                    }else{
+                        let date = Date()
+                        let calendar = Calendar.current
+                        let hour = calendar.component(.hour, from: date)
+                        let minutes = calendar.component(.minute, from: date)
+                        let startTime = String(hour) + ":" + String(minutes)
+                        let endTime = startTime
+                        
+                        let meal = Meal(name:"Meal", photo: UIImage(named: "lunch"), startTime: startTime, endTime: endTime)
+                        meals.append(meal!)
+                        DispatchQueue.main.async{
+                            self.tableView.reloadData()
+                        }
+                    }
+                    
+                } catch {
+                    print("Error -> \(error)")
+                }
+                }
+            }
+            
+            task.resume()
+//        } catch {
+//            print(error)
+//        }
+        
+    }
     
     
     override func didReceiveMemoryWarning() {
@@ -122,7 +214,6 @@ class MealTableViewController: UITableViewController, WCSessionDelegate {
         return meals.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // Table view cells are reused and should be dequeued using a cell identifier.
@@ -141,6 +232,9 @@ class MealTableViewController: UITableViewController, WCSessionDelegate {
         cell.photoImageView.image = meal.photo
         cell.startTimeLabel.text = meal.startTime
         cell.endTimeLabel.text = meal.endTime
+        var color = "D3D3D3"
+        if cellColors[meal.name] != nil {color = cellColors[meal.name]!}
+        cell.contentView.backgroundColor = hexStringToUIColor(hex: color)
 
         return cell
     }
@@ -153,7 +247,6 @@ class MealTableViewController: UITableViewController, WCSessionDelegate {
         return true
     }
     
-
     
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -167,6 +260,35 @@ class MealTableViewController: UITableViewController, WCSessionDelegate {
         }
         
     }
+    
+    func hexStringToUIColor (hex:String) -> UIColor {
+        var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+        
+        if (cString.hasPrefix("#")) {
+            cString.remove(at: cString.startIndex)
+        }
+        
+        if ((cString.characters.count) != 6) {
+            return UIColor.gray
+        }
+        
+        var rgbValue:UInt32 = 0
+        Scanner(string: cString).scanHexInt32(&rgbValue)
+        
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
+    }
+    
+    // Change cell background color.
+//    var cellColors = ["EBCFC4","EBCFC4","EBCFC4","D3D3D3"]
+//    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: IndexPath) {
+////        cell.contentView.backgroundColor = UIColor(rgb: cellColors[indexPath.row % cellColors.count]);
+//        cell.contentView.backgroundColor = hexStringToUIColor(hex: cellColors[indexPath.row % cellColors.count])
+//    }
     
 
     /*
@@ -202,7 +324,7 @@ class MealTableViewController: UITableViewController, WCSessionDelegate {
             }
             
             guard let selectedMealCell = sender as? MealTableViewCell else {
-                fatalError("Unexpected sender: \(sender)")
+                fatalError("Unexpected sender: \(String(describing: sender))")
             }
             
             guard let indexPath = tableView.indexPath(for: selectedMealCell) else {
@@ -213,7 +335,7 @@ class MealTableViewController: UITableViewController, WCSessionDelegate {
             mealDetailViewController.meal = selectedMeal
             
         default:
-            fatalError("Unexpected Segue Identifier; \(segue.identifier)")
+            fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
         }
     }
     
@@ -240,6 +362,7 @@ class MealTableViewController: UITableViewController, WCSessionDelegate {
             saveMeals()
         }
     }
+    
     
     //MARK: Private Methods
     

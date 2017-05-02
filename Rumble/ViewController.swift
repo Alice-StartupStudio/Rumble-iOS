@@ -9,6 +9,7 @@
 import UIKit
 import os.log
 
+
 class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     
@@ -16,7 +17,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     @IBOutlet weak var mealNameLabel: UILabel!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
-
+    
     
     /*
      This value is either passed by `MealTableViewController` in `prepare(for:sender:)`
@@ -29,6 +30,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         
         // Handle the text field’s user input through delegate callbacks.
         nameTextField.delegate = self
+        
+        // Set background color
+        self.view.backgroundColor = UIColor.init(red: 235/255.0, green: 207/255.0, blue: 196/255.0, alpha: 1.0)
         
         // Set up views if editing an existing Meal.
         if let meal = meal {
@@ -127,6 +131,30 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     // MARK: Actions
     
     
+    @IBAction func setLunchImage(_ sender: UIButton) {
+//        meal?.photo = UIImage(named: "lunch")
+        photoImageView.image = UIImage(named: "lunch")
+    }
+    
+    @IBAction func setSnackImage(_ sender: UIButton) {
+        photoImageView.image = UIImage(named: "apple")
+    }
+    
+    @IBAction func setWaterImage(_ sender: UIButton) {
+        photoImageView.image = UIImage(named: "water")
+    }
+    
+    
+    @IBAction func setCoffeeImage(_ sender: UIButton) {
+        photoImageView.image = UIImage(named: "coffee")
+    }
+    
+    @IBAction func setAlcoholImage(_ sender: UIButton) {
+        photoImageView.image = UIImage(named: "lunch")
+    }
+    
+    
+    
     
     @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
         
@@ -157,4 +185,5 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     
 
 }
+
 

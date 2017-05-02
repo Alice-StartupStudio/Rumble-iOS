@@ -25,6 +25,7 @@
 		584B7E651E8A30CC007919FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 584B7E641E8A30CC007919FA /* Assets.xcassets */; };
 		584B7E691E8A30CC007919FA /* RumbleWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 584B7E4B1E8A30CC007919FA /* RumbleWatch.app */; };
 		584B7E731E8A34EE007919FA /* watchConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B7E721E8A34EE007919FA /* watchConnect.swift */; };
+		58B0E3901E8DA4090067E75A /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58B0E38F1E8DA4090067E75A /* UserNotifications.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,9 @@
 		584B7E641E8A30CC007919FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		584B7E661E8A30CC007919FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		584B7E721E8A34EE007919FA /* watchConnect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = watchConnect.swift; sourceTree = "<group>"; };
+		58B0E38D1E8DA3560067E75A /* RumbleWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "RumbleWatch Extension.entitlements"; sourceTree = "<group>"; };
+		58B0E38F1E8DA4090067E75A /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		58B0E3911E8DA7360067E75A /* Rumble.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Rumble.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58B0E3901E8DA4090067E75A /* UserNotifications.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +142,7 @@
 				584B7E4C1E8A30CC007919FA /* RumbleWatch */,
 				584B7E5B1E8A30CC007919FA /* RumbleWatch Extension */,
 				584B7E1F1E89AF2D007919FA /* Products */,
+				58B0E38E1E8DA4090067E75A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -154,6 +160,7 @@
 		584B7E201E89AF2D007919FA /* Rumble */ = {
 			isa = PBXGroup;
 			children = (
+				58B0E3911E8DA7360067E75A /* Rumble.entitlements */,
 				584B7E251E89AF2D007919FA /* Main.storyboard */,
 				584B7E211E89AF2D007919FA /* AppDelegate.swift */,
 				584B7E231E89AF2D007919FA /* ViewController.swift */,
@@ -190,6 +197,7 @@
 		584B7E5B1E8A30CC007919FA /* RumbleWatch Extension */ = {
 			isa = PBXGroup;
 			children = (
+				58B0E38D1E8DA3560067E75A /* RumbleWatch Extension.entitlements */,
 				584B7E5E1E8A30CC007919FA /* InterfaceController.swift */,
 				584B7E601E8A30CC007919FA /* ExtensionDelegate.swift */,
 				584B7E621E8A30CC007919FA /* NotificationController.swift */,
@@ -206,6 +214,14 @@
 				584B7E5D1E8A30CC007919FA /* PushNotificationPayload.apns */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		58B0E38E1E8DA4090067E75A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				58B0E38F1E8DA4090067E75A /* UserNotifications.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +312,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 8396G73H5N;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					584B7E381E89F6E2007919FA = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -312,6 +333,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 8396G73H5N;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -548,6 +574,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Rumble/Rumble.entitlements;
 				DEVELOPMENT_TEAM = 8396G73H5N;
 				INFOPLIST_FILE = Rumble/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -561,6 +588,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Rumble/Rumble.entitlements;
 				DEVELOPMENT_TEAM = 8396G73H5N;
 				INFOPLIST_FILE = Rumble/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -602,6 +630,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "RumbleWatch Extension/RumbleWatch Extension.entitlements";
 				DEVELOPMENT_TEAM = 8396G73H5N;
 				INFOPLIST_FILE = "RumbleWatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -619,6 +648,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "RumbleWatch Extension/RumbleWatch Extension.entitlements";
 				DEVELOPMENT_TEAM = 8396G73H5N;
 				INFOPLIST_FILE = "RumbleWatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -687,6 +717,7 @@
 				584B7E321E89AF2D007919FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		584B7E401E89F6E2007919FA /* Build configuration list for PBXNativeTarget "RumbleTests" */ = {
 			isa = XCConfigurationList;
@@ -695,6 +726,7 @@
 				584B7E421E89F6E2007919FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		584B7E6A1E8A30CC007919FA /* Build configuration list for PBXNativeTarget "RumbleWatch Extension" */ = {
 			isa = XCConfigurationList;
@@ -703,6 +735,7 @@
 				584B7E6C1E8A30CC007919FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		584B7E6E1E8A30CC007919FA /* Build configuration list for PBXNativeTarget "RumbleWatch" */ = {
 			isa = XCConfigurationList;
@@ -711,6 +744,7 @@
 				584B7E701E8A30CC007919FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
